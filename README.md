@@ -1,2 +1,12 @@
 # myNeovimConfigs
-como eu configuro o meu neo-vim
+requisitos 
+
+nodeJS
+npm
+
+
+extensoes do COC:
+coc-rls
+rust analysis
+
+
