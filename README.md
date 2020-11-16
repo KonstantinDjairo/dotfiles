@@ -5,7 +5,7 @@ nodeJS
 npm
 
 
-##extensoes do COC:
+## extensoes do COC:
 coc-rls
 rust analysis
 
