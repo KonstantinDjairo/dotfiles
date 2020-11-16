@@ -16,7 +16,6 @@ Plugin 'vim-airline/vim-airline-themes'
 
 
 
-"----- moonfly
 
 "---- colocando numero nas linhas
 
@@ -71,8 +70,7 @@ Plug 'ervandew/supertab'
 Plug 'Chiel92/vim-autoformat'
 Plug 'rust-lang/rust.vim'
 "---- tema
-Plug 'bluz71/vim-moonfly-colors'
-
+Plugin 'dracula/vim', { 'name': 'dracula' }
 
 
 call plug#end()
@@ -94,7 +92,7 @@ nnoremap <F5> :w <CR> :terminal rs % && ./%< <CR>
 
 
 
-colorscheme moonfly
+colorscheme dracula
 "---- status line
 
 let g:airline_theme='luna'
