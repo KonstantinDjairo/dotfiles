@@ -1,5 +1,16 @@
 call plug#begin()
 
+"-- OBS: TEM Q INSTALAR O LANGUAGE CLIENT:
+"       mkdir -p ~/.vim-plugins
+"	cd ~/.vim-plugins
+"	git clone --depth 1 https://github.com/autozimu/LanguageClient-neovim.git
+"	cd LanguageClient-neovim
+"	bash install.sh
+"-----------------------
+
+
+
+
 "------- defx
 if has('nvim')
 	Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
