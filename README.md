@@ -6,7 +6,7 @@ npm
 
 
 ## extensoes do COC:
-coc-rls
-rust analysis
+### coc-rls
+### rust analysis
 
 
