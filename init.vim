@@ -72,8 +72,8 @@ endif
 
 "---- vim airline
 
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 
 
@@ -135,7 +135,7 @@ Plug 'ervandew/supertab'
 Plug 'Chiel92/vim-autoformat'
 Plug 'rust-lang/rust.vim'
 "---- tema
-Plugin 'dracula/vim', { 'name': 'dracula' }
+Plug 'dracula/vim', { 'name': 'dracula' }
 
 
 
