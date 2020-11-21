@@ -1,9 +1,9 @@
 # myNeovimConfigs
 requisitos 
 
-####nodeJS
-####npm
-####ctrlp.vim
+#### nodeJS
+#### npm
+#### ctrlp.vim
 
 ### extensoes do COC:
 #### coc-rls
