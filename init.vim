@@ -76,6 +76,10 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 
+"--- tema
+"--- monokai
+
+Plug 'phanviet/vim-monokai-pro'
 
 
 
@@ -134,8 +138,8 @@ Plug 'neovim/nvim-lsp'
 Plug 'ervandew/supertab'
 Plug 'Chiel92/vim-autoformat'
 Plug 'rust-lang/rust.vim'
-"---- tema
-Plug 'dracula/vim', { 'name': 'dracula' }
+
+
 
 
 
@@ -156,9 +160,14 @@ nnoremap <F5> :w <CR> :terminal rs % && ./%< <CR>
 
 "---- tema
 
+set termguicolors
+colorscheme monokai_pro
+
+let g:lightline = {
+			\ 'colorscheme': 'monokai_pro',
+			\ }
 
 
-colorscheme dracula
 "---- status line
 
 let g:airline_theme='luna'
