@@ -79,8 +79,7 @@ Plug 'vim-airline/vim-airline-themes'
 "--- tema
 "--- monokai
 
-Plug 'phanviet/vim-monokai-pro'
-
+Plug 'ayu-theme/ayu-vim'
 
 
 "---- colocando numero nas linhas
@@ -160,14 +159,11 @@ nnoremap <F5> :w <CR> :terminal rs % && ./%< <CR>
 
 "---- tema
 
-set termguicolors
-colorscheme monokai_pro
-
-let g:lightline = {
-			\ 'colorscheme': 'monokai_pro',
-			\ }
-
-
+set termguicolors     " enable true colors support
+let ayucolor="light"  " for light version of theme
+let ayucolor="mirage" " for mirage version of theme
+let ayucolor="dark"   " for dark version of theme
+colorscheme ayu
 "---- status line
 
 let g:airline_theme='luna'
@@ -223,6 +219,3 @@ let g:LanguageClient_serverCommands = {
 			\ 'python': ['/usr/local/bin/pyls'],
 			\ 'ruby': ['~/.rbenv/shims/solargraph', 'stdio'],
 			\ }
-
-
-
