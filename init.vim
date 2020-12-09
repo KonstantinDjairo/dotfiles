@@ -1,5 +1,45 @@
 call plug#begin()
 
+"------
+" compile and run rust projects
+nnoremap <F6> :w <CR> :!clear <CR> :cargo run<CR>
+" compile and run c++ projects
+nnoremap <F5> :w <CR> :!clear <CR> :!g++ % -o %< && ./%< <CR>
+" control-v opens .vimrc in a vertical split
+nnoremap <C-v> :vsplit ~/.vimrc <cr>
+" call path tree
+nnoremap <C-o> :NERDTreeToggle <cr>
+
+"auto format when save
+let g:rustfmt_autosave = 1
+" use cargo with syntastic for check rust codes
+let g:syntastic_rust_checkers = ['cargo']
+
+" syntax check
+Plug 'vim-syntastic/syntastic'
+
+
+" no swap
+
+set noswapfile
+
+"IndentLine
+Plug 'Yggdroot/indentLine'
+
+let g:indentLine_color_term = 239
+let g:indentLine_char = '│'
+
+
+" vim slime
+Plug 'jpalardy/vim-slime'
+
+let g:slime_target = "screen"
+let g:slime_target = "vimterminal"
+let g:slime_paste_file = tempname()
+"
+
+
+
 
 
 "----- CTRL P settings
@@ -26,14 +66,6 @@ set completeopt=longest,menuone
 " --------------------------------------------------------
 " COC-VIM TAB SETTINGS START
 
-" Use tab for trigger completion with characters ahead and navigate.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-			\ pumvisible() ? "\<C-n>" :
-			\ <SID>check_back_space() ? "\<TAB>" :
-			\ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
 	let col = col('.') - 1
@@ -131,14 +163,15 @@ Plug 'Chiel92/vim-autoformat'
 
 " Use release branch (recommend)
 Plug 'neoclide/coc.nvim'
-Plug 'neovim/nvim-lsp'
+
 
 
 Plug 'ervandew/supertab'
 Plug 'Chiel92/vim-autoformat'
 Plug 'rust-lang/rust.vim'
 
-
+" debuger
+Plug 'dbgx/lldb.nvim'
 
 
 
@@ -170,26 +203,6 @@ let g:airline_theme='luna'
 
 
 
-
-
-" auto save with formating rust
-let g:rustfmt_autosave = 1
-
-"setup rust-lang pack
-let g:rust_clip_command = 'xclip -selection clipboard'
-
-" setup rust_analyzer LSP (IDE features)
-"lua require'nvim_lsp'.rust_analyzer.setup{}
-
-" Use LSP omni-completion in Rust files
-autocmd Filetype rust setlocal omnifunc=v:lua.vim.lsp.omnifunc
-
-
-
-
-
-
-
 " Press Tab to scroll _down_ a list of auto-completions
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
@@ -203,19 +216,4 @@ nnoremap <leader>c :!cargo clippy
 
 
 "---
-"----- language cliente
-"
 
-set runtimepath+=~/.vim-plugins/LanguageClient-neovim
-
-
-
-"--- configuracoes do language cliente
-"
-let g:LanguageClient_serverCommands = {
-			\ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
-			\ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
-			\ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
-			\ 'python': ['/usr/local/bin/pyls'],
-			\ 'ruby': ['~/.rbenv/shims/solargraph', 'stdio'],
-			\ }
