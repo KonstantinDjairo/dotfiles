@@ -1,4 +1,4 @@
-# myNeovimConfigs
+## notas:
 requisitos 
 
 #### nodeJS
