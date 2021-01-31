@@ -93,6 +93,7 @@ endif
 
 
 
+
 "------- defx
 if has('nvim')
 	Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -121,9 +122,14 @@ set relativenumber
 
 
 "------- defx enable Highlight
-let g:defx_icons_term_colors = {
-			\ 'red': 2
-			\ }
+"let g:defx_icons_term_colors = {
+"			\ 'red': 2
+"			\ }
+
+
+" dark theme
+Plug 'kamykn/dark-theme.vim'
+
 
 
 "======== nerdtree
@@ -156,7 +162,14 @@ let g:defx_icons_root_opened_tree_icon = ''
 let g:defx_icons_nested_opened_tree_icon = ''
 let g:defx_icons_nested_closed_tree_icon = ''
 
-
+" ayu theme
+Plug 'ayu-theme/ayu-vim' " or other package manager
+"...
+set termguicolors     " enable true colors support
+let ayucolor="light"  " for light version of theme
+let ayucolor="mirage" " for mirage version of theme
+let ayucolor="dark"   " for dark version of theme
+"colorscheme ayu
 
 Plug 'ervandew/supertab'
 Plug 'Chiel92/vim-autoformat'
@@ -164,7 +177,8 @@ Plug 'Chiel92/vim-autoformat'
 " Use release branch (recommend)
 Plug 'neoclide/coc.nvim'
 
-
+"night owl theme
+Plug 'haishanh/night-owl.vim'
 
 Plug 'ervandew/supertab'
 Plug 'Chiel92/vim-autoformat'
@@ -192,14 +206,32 @@ nnoremap <F5> :w <CR> :terminal rs % && ./%< <CR>
 
 "---- tema
 
-set termguicolors     " enable true colors support
-let ayucolor="light"  " for light version of theme
-let ayucolor="mirage" " for mirage version of theme
-let ayucolor="dark"   " for dark version of theme
+""""" install
+" or with NeoBundle
+" NeoBundle 'haishanh/night-owl.vim'
+" or with Vundle
+" Plugin 'haishanh/night-owl.vim'
+
+""""" enable 24bit true color
+
+" If you have vim >=8.0 or Neovim >= 0.1.5
+if (has("termguicolors"))
+	set termguicolors
+endif
+
+" For Neovim 0.1.3 and 0.1.4
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+""""" enable the theme
+
+" To enable the lightline theme
+"let g:lightline = { 'colorscheme': 'nightowl' }
 colorscheme ayu
+syntax off
+
 "---- status line
 
-let g:airline_theme='luna'
+let g:airline_theme='minimalist'
 
 
 
@@ -216,4 +248,3 @@ nnoremap <leader>c :!cargo clippy
 
 
 "---
-
