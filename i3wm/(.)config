@@ -9,14 +9,14 @@ font pango: Fira Code Regular Nerd Font 8
 floating_modifier $super
 
 #autostart
-exec --no-startup-id feh --bg-fill /home/sycho/wallpaper.jpg
+exec --no-startup-id feh --bg-fill /home/ronnie/wallpaper.jpg
 exec setxkbmap -model abnt2 -layout br
 exec xrandr --output LVDS1 --brightness 0.6
 exec --no-startup-id xsettingsd &
 exec --no-startup-id compton -b
 
 # start a terminal
-bindsym $super+Return exec kitty
+bindsym $super+Return exec st
 
 # start dmenu (a program launcher)
 bindsym $super+Shift+d exec i3-dmenu-desktop --dmenu="dmenu -i -fn 'Noto Sans:size=8'"
